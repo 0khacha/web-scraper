@@ -1,8 +1,5 @@
 # Universal Web Scraper
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/0khacha/web-scraper)
-[![Status](https://img.shields.io/badge/status-production--ready-green.svg)](https://github.com/0khacha/web-scraper)
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 **Intelligent • High-Performance • Production-Ready**
 
