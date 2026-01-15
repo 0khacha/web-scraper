@@ -1,0 +1,33 @@
+{
+    "_comment": "Default configuration for universal web scraping",
+    "scraping": {
+        "rate_limit": 2.0,
+        "max_retries": 3,
+        "timeout": 15,
+        "user_agent_rotation": true
+    },
+    "export": {
+        "default_formats": [
+            "csv",
+            "excel"
+        ],
+        "output_directory": "output",
+        "deduplicate": true
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "scraper.log",
+        "console_output": true
+    },
+    "intelligent_mode": {
+        "min_confidence": 0.3,
+        "preview_items": 3,
+        "auto_detect_dynamic": true
+    },
+    "dynamic_scraping": {
+        "headless": true,
+        "window_size": "1920x1080",
+        "page_load_timeout": 30,
+        "screenshot_on_error": true
+    }
+}

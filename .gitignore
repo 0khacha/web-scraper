@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Project specific
+scraper.log
+*.log
+output/
+scripts/stealth_test_results.png
+stealth_test_results.png
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Debug and temporary files
+debug.txt
+test_debug.txt
+test_output.txt
+page_dump.txt
+current_test_output.txt
+deps.txt
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db

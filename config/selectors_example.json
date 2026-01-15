@@ -1,0 +1,190 @@
+{
+    "universal": {
+        "container": ".product, .item, .card, article, [class*='container'], [class*='item'], .BasePropertyCard, .thumbnail",
+        "fields": {
+            "title": "h1, h2, h3, .title, .name, [class*='title'], [class*='name']",
+            "price": ".price, [class*='price'], .amount, span:contains('$')",
+            "link": "a",
+            "description": ".description, .details, p"
+        },
+        "use_dynamic": true,
+        "headless": false,
+        "manual_wait": true
+    },
+    "quotes_toscrape_com": {
+        "container": ".quote",
+        "fields": {
+            "text": ".text",
+            "author": ".author",
+            "tags": ".tags"
+        },
+        "use_dynamic": false,
+        "pagination": {
+            "selector": ".next > a",
+            "max_pages": 5
+        }
+    },
+    "books_toscrape": {
+        "container": "article.product_pod",
+        "fields": {
+            "title": "h3 a",
+            "price": ".price_color",
+            "availability": ".availability",
+            "link": "h3 a"
+        },
+        "use_dynamic": false
+    },
+    "re_nyc": {
+        "container": "div[data-testid='card-content'], div.BasePropertyCard_propertyCardWrap__3pS96, .card-content",
+        "fields": {
+            "price": "div[data-testid='card-price'], span[data-label='pc-price'], .price",
+            "address": "div[data-testid='card-address'], .address",
+            "beds": "li[data-testid='property-meta-beds'], span[data-label='pc-meta-beds'], [data-label='property-meta-beds']",
+            "baths": "li[data-testid='property-meta-baths'], span[data-label='pc-meta-baths'], [data-label='property-meta-baths']",
+            "link": "a[data-testid='card-link'], a[href*='/realestateandhomes-detail/'], a.BasePropertyCard_propertyCardAnchor__2p-Z5"
+        },
+        "use_dynamic": true,
+        "headless": false,
+        "manual_wait": true
+    },
+    "webscraper_io": {
+        "container": ".thumbnail",
+        "fields": {
+            "name": "a.title",
+            "price": ".price",
+            "description": ".description",
+            "reviews": ".ratings p:nth-child(2)"
+        },
+        "use_dynamic": true,
+        "category_traversal": {
+            "main_selector": "#side-menu > li:not(:first-child) > a",
+            "sub_selector": "ul.nav-second-level a"
+        },
+        "pagination": {
+            "type": "click",
+            "selector": "ul.pagination li a[rel='next'], ul.pagination li:last-child a",
+            "max_pages": 1
+        }
+    },
+    "covid_worldometers": {
+        "container": "#main_table_countries_today tbody tr",
+        "fields": {
+            "country": "td:nth-child(2)",
+            "total_cases": "td:nth-child(3)",
+            "new_cases": "td:nth-child(4)",
+            "total_deaths": "td:nth-child(5)",
+            "new_deaths": "td:nth-child(6)",
+            "total_recovered": "td:nth-child(7)",
+            "new_recovered": "td:nth-child(8)",
+            "active_cases": "td:nth-child(9)",
+            "serious_critical": "td:nth-child(10)",
+            "total_cases_per_1m": "td:nth-child(11)",
+            "deaths_per_1m": "td:nth-child(12)",
+            "total_tests": "td:nth-child(13)",
+            "tests_per_1m": "td:nth-child(14)",
+            "population": "td:nth-child(15)",
+            "continent": "td:nth-child(16)"
+        },
+        "use_dynamic": false,
+        "rate_limit": 1.0
+    },
+    "goodreads_list": {
+        "container": "tr[itemtype='http://schema.org/Book']",
+        "fields": {
+            "title": "a.bookTitle span[itemprop='name']",
+            "author": "a.authorName span[itemprop='name']",
+            "votes": "span.smallText a",
+            "average_rating": "span.minirating",
+            "book_url": "a.bookTitle",
+            "cover_image": "img.bookcover",
+            "year": "span.greyText.smallText"
+        },
+        "use_dynamic": true,
+        "rate_limit": 1.5,
+        "pagination": {
+            "selector": "a.next_page",
+            "max_pages": 5
+        }
+    },
+    "avito_morocco_realestate": {
+        "container": "div[data-testid='listing-card'], .listing-card, div.sc-1nre5ec-1",
+        "fields": {
+            "title": "h3, .listing-title, [data-testid='listing-title']",
+            "price": ".price, [data-testid='listing-price'], .sc-1x0vz2r-0",
+            "location": ".location, [data-testid='listing-location'], .sc-1x0vz2r-1",
+            "description": ".description, [data-testid='listing-description']",
+            "link": "a",
+            "image": "img",
+            "date": ".date, .listing-date, time",
+            "property_type": ".property-type, .category",
+            "surface": ".surface, [data-testid='surface']",
+            "rooms": ".rooms, [data-testid='rooms']"
+        },
+        "use_dynamic": true,
+        "headless": false,
+        "manual_wait": true,
+        "rate_limit": 1.0,
+        "pagination": {
+            "selector": "button[aria-label='Next'], a.next, .pagination-next",
+            "max_pages": 3
+        }
+    },
+    "morocco_weather": {
+        "container": "table.zebra tbody tr, table.zebra tr",
+        "fields": {
+            "city": "td:first-child a, td:first-child",
+            "time": "td:nth-child(2)",
+            "temp": "td:nth-child(4)",
+            "description": "td:nth-child(3) img"
+        },
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "use_dynamic": false
+    },
+    "morocco_all_cities": {
+        "container": "table tr",
+        "fields": {
+            "city": "td:first-child a, td:first-child",
+            "time": "td:nth-child(2)",
+            "temp": "td:nth-child(4)",
+            "description": "td:nth-child(3) img"
+        },
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        },
+        "use_dynamic": false
+    },
+    "hespress_articles": {
+        "container": "h3.card-title",
+        "fields": {
+            "link": "a",
+            "title": "a.stretched-link"
+        },
+        "use_dynamic": true
+    },
+    "amazon_products": {
+        "container": ".s-result-item[data-component-type='s-search-result']",
+        "fields": {
+            "title": "h2 .a-text-normal",
+            "price": ".a-price .a-offscreen",
+            "rating": ".a-icon-alt",
+            "image": "img.s-image",
+            "link": "h2 a.a-link-normal"
+        },
+        "use_dynamic": true,
+        "headless": false,
+        "manual_wait": true,
+        "pagination": {
+            "selector": "a.s-pagination-next",
+            "max_pages": 3
+        }
+    },
+    "thoughtco_capitals": {
+        "container": ".mntl-sc-block-html ol li",
+        "fields": {
+            "entry": "."
+        },
+        "use_dynamic": false
+    }
+}
