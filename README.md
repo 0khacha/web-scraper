@@ -118,6 +118,7 @@ python main.py "http://books.toscrape.com" --config books_toscrape --async --con
 | `--container` | CSS Selector for container |
 | `--fields` | Fields mapping (e.g. title:h1,price:.price) |
 | `--max-items` | Maximum number of items to scrape |
+| `--max-pages` | Maximum number of pages to scrape |
 
 ### Performance Options
 | Option | Description |
